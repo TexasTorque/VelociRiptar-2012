@@ -1,5 +1,7 @@
 package org.TexasTorque.TexasTorque2013.constants;
 
+import org.TexasTorque.TorqueLib.controlLoop.StateSpaceGains;
+
 public class Constants
 {
     //----- Controller -----
@@ -52,6 +54,7 @@ public class Constants
     //----- Shooter -----
     public final static double DEFAULT_SHOOTER_RATE = 1000.0;
     public final static double SHOOTER_STOPPED_RATE = 0.0;
+    public final static StateSpaceGains SHOOTER_GAINS = new StateSpaceGains(new double[]{0},new double[]{0},new double[]{0},new double[]{0},new double[]{0},new double[]{0},new double[]{12},new double[]{0.0});
     
     //----- Elevator -----
     public final static int ELEVATOR_READY_STATE = 0;

@@ -2,13 +2,13 @@ package org.TexasTorque.TexasTorque2013.subsystem.manipulator;
 
 import org.TexasTorque.TexasTorque2013.TorqueSubsystem;
 import org.TexasTorque.TexasTorque2013.constants.Constants;
-import org.TexasTorque.TorqueLib.controlLoop.TorquePID;
+import org.TexasTorque.TorqueLib.controlLoop.FlywheelController;
 
 public class Shooter extends TorqueSubsystem
 {   
     private static Shooter instance;
     
-    private TorquePID shooterPID;
+    private FlywheelController shooterController;
     
     private double shooterMotorSpeed;
     private double desiredShooterRate;
@@ -26,7 +26,7 @@ public class Shooter extends TorqueSubsystem
     {
         super();
         
-        shooterPID = new TorquePID();
+        shooterController = new FlywheelController("shooter",Constants.SHOOTER_GAINS, .004);
         
         shooterMotorSpeed = Constants.MOTOR_STOPPED;
         desiredShooterRate = Constants.SHOOTER_STOPPED_RATE;
@@ -37,14 +37,7 @@ public class Shooter extends TorqueSubsystem
     
     public void run()
     {
-        double shooterSpeed = shooterPID.calculate(sensorInput.getShooterRate());
-        
-        shooterMotorSpeed = limitShooterSpeed(shooterSpeed);
-        
-        if(desiredShooterRate == Constants.SHOOTER_STOPPED_RATE)
-        {
-            shooterMotorSpeed = Constants.MOTOR_STOPPED;
-        }
+        shooterMotorSpeed = shooterController.update(sensorInput.getShooterRate());
     }
     
     public void setToRobot()
@@ -58,7 +51,7 @@ public class Shooter extends TorqueSubsystem
         if(shooterRate != desiredShooterRate)
         {
             desiredShooterRate = shooterRate;
-            shooterPID.setSetpoint(desiredShooterRate);
+            shooterController.setVelocityGoal(desiredShooterRate);
         }
     }
     
@@ -69,7 +62,7 @@ public class Shooter extends TorqueSubsystem
     
     public boolean isSpunUp()
     {
-        return (shooterPID.isDone());
+        return (shooterController.isDoneRaw());
     }
     
     public void setHoodState(boolean desired)
@@ -109,17 +102,8 @@ public class Shooter extends TorqueSubsystem
     {   
         shooterRate = params.getAsDouble("S_ShooterRate", Constants.DEFAULT_SHOOTER_RATE);
 
-        double p = params.getAsDouble("S_ShooterP", 0.0);
-        double d = params.getAsDouble("S_ShooterD", 0.0);
-        double ff = params.getAsDouble("S_ShooterKV", 0.0);
         double r = params.getAsDouble("S_ShooterDoneRange", 300.0);
-        
-        shooterPID.setPIDGains(p, 0.0, d);
-        shooterPID.setFeedForward(ff);
-        shooterPID.setDoneRange(r);
-        shooterPID.setMinDoneCycles(1);
-        shooterPID.reset();
-        
+        shooterController.setDoneRange(r);
     }
     
 }
