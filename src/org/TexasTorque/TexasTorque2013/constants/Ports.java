@@ -13,25 +13,25 @@ public class Ports
     //----- Motors -----
         //----- Sidecar 1 -----
         public final static int FRONT_RIGHT_DRIVE_MOTOR_PORT = 8;
-        public final static int REAR_RIGHT_DRIVE_MOTOR_PORT = 6;
-        public final static int REAR_SHOOTER_MOTOR_PORT = 9;
-        public final static int FRONT_SHOOTER_MOTOR_PORT = 5;
+        public final static int REAR_RIGHT_DRIVE_MOTOR_PORT = 9;
+        public final static int REAR_SHOOTER_MOTOR_PORT = 10;
+        public final static int FRONT_SHOOTER_MOTOR_PORT = 6;
         
         //----- Sidecar 2 -----
         public final static int FRONT_LEFT_DRIVE_MOTOR_PORT = 4;
-        public final static int REAR_LEFT_DRIVE_MOTOR_PORT = 10;
-        public final static int INTAKE_MOTOR_PORT = 2;
+        public final static int REAR_LEFT_DRIVE_MOTOR_PORT = 5;
+        public final static int INTAKE_MOTOR_PORT = 1;
         public final static int ELEVATOR_MOTOR_PORT = 3;
-        public final static int CROSS_MOTOR_PORT = 1;
+        public final static int CROSS_MOTOR_PORT = 2;
     
     //----- Solenoids -----
     public final static int INTAKE_A_PORT = 3;
     public final static int INTAKE_B_PORT = 4;
-    public final static int BRAKE_A_PORT = 5;
-    public final static int BRAKE_B_PORT = 6;
+    public final static int BRAKE_A_PORT = 6;
+    public final static int BRAKE_B_PORT = 7;
     public final static int DRIVE_SHIFTER_PORT_A = 1;
     public final static int DRIVE_SHIFTER_PORT_B = 2;
-    public final static int BRIDGE_LOWERER_PORT = 7;
+    public final static int BRIDGE_LOWERER_PORT = 5;
     public final static int HOOD_SOLINOID_PORT = 8;
     
     //----- Digital Inputs -----

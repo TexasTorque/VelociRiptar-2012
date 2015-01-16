@@ -112,7 +112,7 @@ public class SensorInput
     
     public double getShooterRate()
     {
-        return TorqueUtil.convertToRMP(shooterEncoder.getRate(), 250);
+        return TorqueUtil.convertToRMP(shooterEncoder.getRate(), 100);
     }
     
     public boolean getBottomLimitSwitch()

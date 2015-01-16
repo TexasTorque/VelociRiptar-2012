@@ -2,7 +2,6 @@ package org.TexasTorque.TexasTorque2013.subsystem.manipulator;
 
 import org.TexasTorque.TexasTorque2013.TorqueSubsystem;
 import org.TexasTorque.TexasTorque2013.constants.Constants;
-import org.TexasTorque.TorqueLib.util.TorqueToggle;
 
 public class Intake extends TorqueSubsystem
 {
@@ -14,8 +13,6 @@ public class Intake extends TorqueSubsystem
     public static double intakeSpeed;
     public static double outtakeSpeed;
    
-    //private TorqueToggle crossDown;
-    
     public static Intake getInstance()
     {
         return (instance == null) ? instance = new Intake() : instance;
@@ -24,14 +21,12 @@ public class Intake extends TorqueSubsystem
     private Intake()
     {
         super();
-        //crossDown = new TorqueToggle();
         intakeMotorSpeed = Constants.MOTOR_STOPPED;
         crossPosition = Constants.CROSS_UP;
     }
     
     public void run()
     {
-        //crossDown.calc(driverInput.toggleCross());
     }
     
     public void setToRobot()
@@ -46,7 +41,6 @@ public class Intake extends TorqueSubsystem
         {
             robotOutput.setCrossMotor(Constants.MOTOR_STOPPED);
         }
-//        robotOutput.setIntakePneumatic(crossDown.get());
     }
     
     public void setIntakeSpeed(double speed)
