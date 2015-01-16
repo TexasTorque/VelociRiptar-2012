@@ -30,7 +30,7 @@ public class SensorInput
     {
         watchdog = Watchdog.getInstance();
         //----- Encoders/Counters -----
-        leftDriveEncoder = new TorqueEncoder(Ports.SIDECAR_TWO, Ports.LEFT_DRIVE_ENCODER_A_PORT, Ports.SIDECAR_TWO, Ports.LEFT_DRIVE_ENCODER_B_PORT, false);
+        leftDriveEncoder = new TorqueEncoder(Ports.SIDECAR_ONE, Ports.LEFT_DRIVE_ENCODER_A_PORT, Ports.SIDECAR_ONE, Ports.LEFT_DRIVE_ENCODER_B_PORT, false);
         rightDriveEncoder = new TorqueEncoder(Ports.SIDECAR_ONE, Ports.RIGHT_DRIVE_ENCODER_A_PORT, Ports.SIDECAR_ONE, Ports.RIGHT_DRIVE_ENCODER_B_PORT, false);
         shooterEncoder = new TorqueEncoder(Ports.SIDECAR_ONE, Ports.SHOOTER_ENCODER_PORT_A, Ports.SIDECAR_ONE, Ports.SHOOTER_ENCODER_PORT_B, false);
         //----- Gyro -----
@@ -39,9 +39,9 @@ public class SensorInput
         gyro.reset();
         gyro.setSensitivity(Constants.GYRO_SENSITIVITY);
         //----- Digital -----
-        bottomLimitSwitch = new DigitalInput(Ports.SIDECAR_TWO, Ports.BOTTOM_LIMIT_SWITCH);
-        middleLimitSwitch = new DigitalInput(Ports.SIDECAR_TWO, Ports.MIDDLE_LIMIT_SWITCH);
-        lightSwitch = new DigitalInput(Ports.SIDECAR_TWO, Ports.LIGHT_SENSOR_PORT);
+        bottomLimitSwitch = new DigitalInput(Ports.SIDECAR_ONE, Ports.BOTTOM_LIMIT_SWITCH);
+        middleLimitSwitch = new DigitalInput(Ports.SIDECAR_ONE, Ports.MIDDLE_LIMIT_SWITCH);
+        lightSwitch = new DigitalInput(Ports.SIDECAR_ONE, Ports.LIGHT_SENSOR_PORT);
         //----- Misc -----
         pressureSensor = new AnalogChannel(Ports.ANALOG_PRESSURE_PORT);
         startEncoders();

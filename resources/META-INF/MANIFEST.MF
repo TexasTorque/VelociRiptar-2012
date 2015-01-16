@@ -1,4 +1,4 @@
-MIDlet-Name: TexasTorque2013
+MIDlet-Name: Velo
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: FIRST
 MIDlet-1: RobotBase, , org.TexasTorque.TexasTorque2013.RobotBase

@@ -41,12 +41,12 @@ public class RobotOutput
     {   
         
         lightsVector = new Vector();
-        lightsVector.addElement(new DigitalOutput(Ports.SIDECAR_TWO, Ports.LIGHTS_R_PORT));
-        lightsVector.addElement(new DigitalOutput(Ports.SIDECAR_TWO, Ports.LIGHTS_G_PORT));
-        lightsVector.addElement(new DigitalOutput(Ports.SIDECAR_TWO, Ports.LIGHTS_B_PORT));
+        lightsVector.addElement(new DigitalOutput(Ports.SIDECAR_ONE, Ports.LIGHTS_R_PORT));
+        lightsVector.addElement(new DigitalOutput(Ports.SIDECAR_ONE, Ports.LIGHTS_G_PORT));
+        lightsVector.addElement(new DigitalOutput(Ports.SIDECAR_ONE, Ports.LIGHTS_B_PORT));
         lights = new VeloLights(lightsVector);
         //----- Pneumatics -----
-        compressor = new Compressor(Ports.SIDECAR_TWO, Ports.PRESSURE_SWITCH_PORT, Ports.SIDECAR_ONE, Ports.COMPRESSOR_RELAY_PORT);
+        compressor = new Compressor(Ports.SIDECAR_ONE, Ports.PRESSURE_SWITCH_PORT, Ports.SIDECAR_ONE, Ports.COMPRESSOR_RELAY_PORT);
         driveShifter = new DoubleSolenoid(Ports.DRIVE_SHIFTER_PORT_A, Ports.DRIVE_SHIFTER_PORT_B);
         intake = new DoubleSolenoid(Ports.INTAKE_A_PORT, Ports.INTAKE_B_PORT);
         bridgeDropper = new Solenoid(Ports.BRIDGE_LOWERER_PORT);
@@ -55,17 +55,17 @@ public class RobotOutput
         
         
         //----- Drive Motors -----
-        frontLeftDriveMotor = new Motor(new Victor(Ports.SIDECAR_TWO, Ports.FRONT_LEFT_DRIVE_MOTOR_PORT), false, true);
-        rearLeftDriveMotor = new Motor(new Victor(Ports.SIDECAR_TWO, Ports.REAR_LEFT_DRIVE_MOTOR_PORT), false, true);
+        frontLeftDriveMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.FRONT_LEFT_DRIVE_MOTOR_PORT), false, true);
+        rearLeftDriveMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.REAR_LEFT_DRIVE_MOTOR_PORT), false, true);
         frontRightDriveMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.FRONT_RIGHT_DRIVE_MOTOR_PORT), true, true);
         rearRightDriveMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.REAR_RIGHT_DRIVE_MOTOR_PORT), true, true);
         //----- Shooter Subsystem Motors-----
         frontShooterMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.FRONT_SHOOTER_MOTOR_PORT), true, true);
         rearShooterMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.REAR_SHOOTER_MOTOR_PORT), true, true);
         //----- Misc Motors -----
-        intakeMotor = new Motor(new Victor(Ports.SIDECAR_TWO, Ports.INTAKE_MOTOR_PORT), false, true);
-        elevatorMotor = new Motor(new Victor(Ports.SIDECAR_TWO, Ports.ELEVATOR_MOTOR_PORT), true, true);
-        crossMotor = new Motor(new Victor(Ports.SIDECAR_TWO, Ports.CROSS_MOTOR_PORT), false, true);
+        intakeMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.INTAKE_MOTOR_PORT), false, true);
+        elevatorMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.ELEVATOR_MOTOR_PORT), true, true);
+        crossMotor = new Motor(new Victor(Ports.SIDECAR_ONE, Ports.CROSS_MOTOR_PORT), false, true);
         //----- Misc Misc -----
         compressor.start();
     }
