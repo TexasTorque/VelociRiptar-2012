@@ -38,18 +38,18 @@ public class Ports
         //----- Sidecar 1 -----
         public final static int SHOOTER_ENCODER_PORT_A = 1;
         public final static int SHOOTER_ENCODER_PORT_B = 2;
-        public final static int RIGHT_DRIVE_ENCODER_A_PORT = 13;
-        public final static int RIGHT_DRIVE_ENCODER_B_PORT = 14;
+        public final static int RIGHT_DRIVE_ENCODER_A_PORT = 6;
+        public final static int RIGHT_DRIVE_ENCODER_B_PORT = 8;
         
         //----- Sidecar 2 -----
-        public final static int LEFT_DRIVE_ENCODER_A_PORT = 8;
-        public final static int LEFT_DRIVE_ENCODER_B_PORT = 12;
+        public final static int LEFT_DRIVE_ENCODER_A_PORT = 3;
+        public final static int LEFT_DRIVE_ENCODER_B_PORT = 7;
         public final static int LIGHTS_R_PORT = 10;
         public final static int LIGHTS_G_PORT = 9;
         public final static int LIGHTS_B_PORT = 11;
         public final static int PRESSURE_SWITCH_PORT = 4;
-        public final static int BOTTOM_LIMIT_SWITCH = 3;
-        public final static int MIDDLE_LIMIT_SWITCH = 6;
+        public final static int BOTTOM_LIMIT_SWITCH = 13;
+        public final static int MIDDLE_LIMIT_SWITCH = 12;
         public final static int LIGHT_SENSOR_PORT = 5; 
     
     //----- Analog Inputs -----
@@ -58,7 +58,7 @@ public class Ports
     
     //----- Relays -----
         //----- Sidecar 1 -----
-        public final static int COMPRESSOR_RELAY_PORT = 1;
+        public final static int COMPRESSOR_RELAY_PORT = 7;
         //----- Sidecar 2 -----
     
 }

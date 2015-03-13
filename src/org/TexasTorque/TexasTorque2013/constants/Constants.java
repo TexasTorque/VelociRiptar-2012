@@ -3,8 +3,8 @@ package org.TexasTorque.TexasTorque2013.constants;
 public class Constants
 {
     //----- Controller -----
-    public final static double SPEED_AXIS_DEADBAND = 0.07;
-    public final static double TURN_AXIS_DEADBAND = 0.07;
+    public final static double SPEED_AXIS_DEADBAND = 0.2;
+    public final static double TURN_AXIS_DEADBAND = 0.2;
     
     public final static boolean DEFAULT_FIRST_CONTROLLER_TYPE = false;
     public final static boolean DEFAULT_SECOND_CONTROLLER_TYPE = false;
