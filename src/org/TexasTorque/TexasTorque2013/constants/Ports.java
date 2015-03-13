@@ -60,5 +60,4 @@ public class Ports
         //----- Sidecar 1 -----
         public final static int COMPRESSOR_RELAY_PORT = 7;
         //----- Sidecar 2 -----
-    
 }
